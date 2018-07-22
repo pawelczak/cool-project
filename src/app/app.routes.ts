@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { UserPickerExampleComponent } from './examples/user-picker-example/user-picker-example.component';
+import { UserPickerBasicComponent } from './examples/user-picker-basic/user-picker-basic.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'userpicker', pathMatch: 'full' },
-  { path: 'userpicker', component: UserPickerExampleComponent },
+  { path: 'userpicker', component: UserPickerBasicComponent },
   { path: '**', redirectTo: 'userpicker', pathMatch: 'full' }
 ];

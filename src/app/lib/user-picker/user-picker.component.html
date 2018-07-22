@@ -1,7 +1,5 @@
-<ul>
-
-  <li *ngFor="let user of users$ | async">
-    {{user.id}} - {{user.name}}
-  </li>
-
-</ul>
+<mat-select>
+  <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+    {{user.name}}
+  </mat-option>
+</mat-select>
