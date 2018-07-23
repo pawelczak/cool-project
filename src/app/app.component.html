@@ -1,2 +1,33 @@
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav #sidenav mode="side" [opened]="opened" >
 
-<router-outlet></router-outlet>
+
+    <mat-list>
+      <mat-list-item >
+        <a [routerLink]="'/userpicker-basic'" >User picker - basic</a>
+      </mat-list-item>
+      <mat-list-item >
+        <a [routerLink]="'/userpicker-advanced'" >User picker - advanced</a>
+      </mat-list-item>
+      <mat-list-item> Task cards </mat-list-item>
+    </mat-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h1>Cool project</h1>
+
+        <button mat-button (click)="toggleSidenav()" >Menu</button>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

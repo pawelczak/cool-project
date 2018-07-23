@@ -1,0 +1,9 @@
+.platform-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.platform {
+  margin: 20px;
+}

@@ -18,5 +18,4 @@ export class JiraUsersService extends UsersService {
     ]);
   }
 
-
 }
