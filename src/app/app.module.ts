@@ -11,6 +11,7 @@ import { routes } from './app.routes';
 import { UserPickerModule } from './lib/user-picker/user-picker.module';
 import { UserPickerBasicModule } from './examples/user-picker-basic/user-picker-basic.module';
 import { UserPickerAdvancedModule } from './examples/user-picker-advanced/user-picker-advanced.module';
+import { TaskListModule } from './examples/tasks-list/task-list.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { UserPickerAdvancedModule } from './examples/user-picker-advanced/user-p
     MatListModule,
     UserPickerBasicModule,
     UserPickerAdvancedModule,
-    UserPickerModule.forPlatform()
+    UserPickerModule.forPlatform(),
+    TaskListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
