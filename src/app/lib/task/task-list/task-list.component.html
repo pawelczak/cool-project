@@ -2,13 +2,10 @@
 
   <ng-container *ngFor="let task of tasks">
 
-    <ng-container *ngComponentOutlet="taskCardComponent; injector: createInjector(task)" ></ng-container>
+    <app-task-item [task]="task" ></app-task-item>
 
   </ng-container>
-
 
   <button (click)="changeTask()">Change</button>
 
 </div>
-
-

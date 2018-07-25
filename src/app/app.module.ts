@@ -11,7 +11,7 @@ import { routes } from './app.routes';
 import { UserPickerModule } from './lib/user-picker/user-picker.module';
 import { UserPickerBasicModule } from './examples/user-picker-basic/user-picker-basic.module';
 import { UserPickerAdvancedModule } from './examples/user-picker-advanced/user-picker-advanced.module';
-import { TaskListModule } from './examples/tasks-list/task-list.module';
+import { TrelloTaskExampleModule } from './examples/trello-task-example/trello-task-example.module';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { TaskListModule } from './examples/tasks-list/task-list.module';
     UserPickerBasicModule,
     UserPickerAdvancedModule,
     UserPickerModule.forPlatform(),
-    TaskListModule
+    TrelloTaskExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
