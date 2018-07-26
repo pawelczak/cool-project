@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component, Inject, Injector, Input, OnInit } from '@angular/core';
 
+import { abstractTaskComponent } from '../task-token';
+import { AbstractTaskComponent } from '../abstract-task/abstract-task.component';
+
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
@@ -12,7 +15,7 @@ export class TaskItemComponent implements OnInit {
   task: any;
 
   constructor(private injector: Injector,
-              @Inject('task-item') private taskItemComponent: any) {
+              @Inject(abstractTaskComponent) private taskItemComponent: AbstractTaskComponent) {
   }
 
   ngOnInit() {
