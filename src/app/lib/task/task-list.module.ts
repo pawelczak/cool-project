@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskItemComponent } from './task-item/task-item.component';
+import { abstractTaskComponent } from './task-token';
+import { TaskListFeatureModule } from './task-list-feature.module';
 
 @NgModule({})
 export class TaskListModule {
@@ -12,22 +14,45 @@ export class TaskListModule {
     TaskItemComponent
   ];
 
-  static forPlatform(args: any): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
+
+    @NgModule({
+      imports: [
+        CommonModule
+      ],
+      declarations: [
+        TaskListComponent,
+        TaskItemComponent
+      ],
+      exports: [
+        TaskListComponent
+      ]
+    })
+    class DynamicTaskListModule {
+    }
+
+    return {
+      ngModule: DynamicTaskListModule,
+      providers: []
+    };
+  }
+
+  static forFeature(args: any): ModuleWithProviders {
 
     @NgModule({
       imports: [
         CommonModule,
+        TaskListFeatureModule
       ],
       declarations: [
-        TaskListComponent,
-        TaskItemComponent,
+        // ...TaskListModule.exports,
         args
-      ],
-      exports: [
-        TaskListComponent
       ],
       entryComponents: [
         args
+      ],
+      exports: [
+        TaskListFeatureModule
       ]
     })
     class DynamicTaskListModule {
@@ -36,7 +61,7 @@ export class TaskListModule {
     return {
       ngModule: DynamicTaskListModule,
       providers: [{
-        provide: 'task-item',
+        provide: abstractTaskComponent,
         useValue: args
       }]
     };

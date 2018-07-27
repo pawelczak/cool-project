@@ -10,10 +10,10 @@ import { TrelloTaskCardComponent } from '../../platforms/trello/task-card/trello
 @NgModule({
   imports: [
     CommonModule,
-    TaskListModule.forPlatform(TrelloTaskCardComponent)
+    TaskListModule.forFeature(TrelloTaskCardComponent)
   ],
   declarations: [
     TrelloTaskExampleComponent
-  ]
+  ],
 })
 export class TrelloTaskExampleModule { }
