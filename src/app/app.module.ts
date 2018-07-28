@@ -13,6 +13,7 @@ import { UserPickerBasicModule } from './examples/user-picker-basic/user-picker-
 import { UserPickerAdvancedModule } from './examples/user-picker-advanced/user-picker-advanced.module';
 import { TrelloTaskExampleModule } from './examples/trello-task-example/trello-task-example.module';
 import { JiraTaskExampleModule } from './examples/jira-task-example/jira-task-example.module';
+import { TaskListModule } from './lib/task/task-list.module';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,9 @@ import { JiraTaskExampleModule } from './examples/jira-task-example/jira-task-ex
     UserPickerBasicModule,
     UserPickerAdvancedModule,
     UserPickerModule.forPlatform(),
-    // TaskListModule.forRoot(),
-    TrelloTaskExampleModule,
+
+    // TrelloTaskExampleModule,
+
     JiraTaskExampleModule
   ],
   providers: [],

@@ -9,7 +9,15 @@ export const routes: Routes = [
   { path: '', redirectTo: 'userpicker-basic', pathMatch: 'full' },
   { path: 'userpicker-basic', component: UserPickerBasicComponent },
   { path: 'userpicker-advanced', component: UserPickerAdvancedComponent },
-  { path: 'task-list-trello', component: TrelloTaskExampleComponent },
+
+  {
+    path: 'task-list-trello',
+    loadChildren: './examples/trello-task-example/trello-task-example.module#TrelloTaskExampleModule'
+    // component: TrelloTaskExampleComponent
+  },
+
+
+
   { path: 'task-list-jira', component: JiraTaskExampleComponent },
   { path: '**', redirectTo: 'userpicker-basic', pathMatch: 'full' }
 ];

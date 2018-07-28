@@ -1,4 +1,4 @@
-import { Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 export abstract class AbstractTaskComponent {
 

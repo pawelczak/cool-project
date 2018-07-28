@@ -7,5 +7,4 @@ import { AbstractTaskComponent } from '../../../lib/task/abstract-task/abstract-
   styleUrls: ['./jira-task.component.css']
 })
 export class JiraTaskComponent extends AbstractTaskComponent {
-
 }

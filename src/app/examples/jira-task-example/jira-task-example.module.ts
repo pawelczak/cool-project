@@ -5,6 +5,7 @@ import { TaskListModule } from '../../lib/task/task-list.module';
 import { JiraTaskComponent } from '../../platforms/jira/task/jira-task.component';
 import { JiraTaskExampleComponent } from './jira-task-example.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +13,6 @@ import { JiraTaskExampleComponent } from './jira-task-example.component';
   ],
   declarations: [
     JiraTaskExampleComponent
-  ]
+  ],
 })
 export class JiraTaskExampleModule { }
