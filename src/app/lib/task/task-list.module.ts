@@ -1,43 +1,15 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TaskListComponent } from './task-list/task-list.component';
-import { TaskItemComponent } from './task-item/task-item.component';
 import { abstractTaskComponent } from './task-token';
 import { TaskListFeatureModule } from './task-list-feature.module';
+import { AbstractTaskComponent } from './abstract-task/abstract-task.component';
+import { TasksService } from './services/tasks.service';
 
-@NgModule({})
+@NgModule()
 export class TaskListModule {
 
-  static exports = [
-    TaskListComponent,
-    TaskItemComponent
-  ];
-
-  static forRoot(): ModuleWithProviders {
-
-    @NgModule({
-      imports: [
-        CommonModule
-      ],
-      declarations: [
-        TaskListComponent,
-        TaskItemComponent
-      ],
-      exports: [
-        TaskListComponent
-      ]
-    })
-    class DynamicTaskListModule {
-    }
-
-    return {
-      ngModule: DynamicTaskListModule,
-      providers: []
-    };
-  }
-
-  static forFeature(args: any): ModuleWithProviders {
+  static forPlatform(taskComponent: AbstractTaskComponent): ModuleWithProviders {
 
     @NgModule({
       imports: [
@@ -45,11 +17,10 @@ export class TaskListModule {
         TaskListFeatureModule
       ],
       declarations: [
-        // ...TaskListModule.exports,
-        args
+        taskComponent as any
       ],
       entryComponents: [
-        args
+        taskComponent as any
       ],
       exports: [
         TaskListFeatureModule
@@ -60,9 +31,11 @@ export class TaskListModule {
 
     return {
       ngModule: DynamicTaskListModule,
-      providers: [{
+      providers: [
+        TasksService,
+        {
         provide: abstractTaskComponent,
-        useValue: args
+        useValue: taskComponent
       }]
     };
   }

@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     component: TrelloTaskExampleComponent
   }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

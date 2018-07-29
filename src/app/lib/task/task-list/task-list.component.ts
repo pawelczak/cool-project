@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { TasksService } from '../services/tasks.service';
+import { Task } from '../model/task';
 
 @Component({
   selector: 'app-task-list',
@@ -7,26 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
-  tasks = [{
-    name: 'Task #1',
-    assignee: 'admin',
-    startDate: '01.01.1970'
-  }, {
-    name: 'Task #2',
-    assignee: 'admin',
-    startDate: '01.01.1972'
-  }, {
-    name: 'Task #3',
-    assignee: 'admin',
-    startDate: '01.01.1973'
-  }];
+  tasks$: Observable<Array<Task>>;
+
+  constructor(private tasksService: TasksService) {}
 
   ngOnInit() {
+    this.tasks$ = this.tasksService.getTasks();
   }
 
   changeTask(): void {
-    const task = this.tasks[1];
-    this.tasks[1] = { ...task, name: 'Task #2 modified' };
+    // const task = this.tasks[1];
+    // this.tasks[1] = { ...task, name: 'Task #2 modified' };
   }
 
 }

@@ -12,7 +12,7 @@ import { TrelloTaskExampleRoutingModule } from './trello-task-example-routing.mo
   imports: [
     CommonModule,
     TrelloTaskExampleRoutingModule,
-    TaskListModule.forFeature(TrelloTaskCardComponent)
+    TaskListModule.forPlatform(TrelloTaskCardComponent as any)
   ],
   declarations: [
     TrelloTaskExampleComponent

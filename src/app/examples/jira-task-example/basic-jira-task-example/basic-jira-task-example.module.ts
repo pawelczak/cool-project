@@ -9,7 +9,6 @@ import { abstractTaskComponent } from '../../../lib/task/task-token';
 @NgModule({
   imports: [
     CommonModule,
-    TaskListModule.forFeature(JiraTaskComponent)
   ],
   declarations: [
     JiraTaskExampleComponent,

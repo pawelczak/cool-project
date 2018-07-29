@@ -1,7 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import { Inject } from '@angular/core';
+
+import { Task } from '../model/task';
 
 export abstract class AbstractTaskComponent {
 
-  protected constructor(@Inject('task') public task: any) {}
+  protected constructor(@Inject('task') public task: Task) {}
 
 }
